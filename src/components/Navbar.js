@@ -1,98 +1,58 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import github from '../img/github-icon.svg'
-import logo from '../img/logo.svg'
+import React from 'react';
+import { Link } from 'gatsby';
+import github from '../img/github-icon.svg';
+import logo from '../img/logo.svg';
+import Container from './Container';
+import { Box, Flex, Text, Image, Link as UILink } from '@chakra-ui/core';
+import { FaReact, FaGithub } from 'react-icons/fa';
 
-const Navbar = class extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      active: false,
-      navBarActiveClass: '',
-    }
-  }
-
-  toggleHamburger = () => {
-    // toggle the active boolean in the state
-    this.setState(
-      {
-        active: !this.state.active,
-      },
-      // after state has been updated,
-      () => {
-        // set the class in state for the navbar accordingly
-        this.state.active
-          ? this.setState({
-              navBarActiveClass: 'is-active',
-            })
-          : this.setState({
-              navBarActiveClass: '',
-            })
-      }
-    )
-  }
-
-  render() {
-    return (
-      <nav
-        className="navbar is-transparent"
-        role="navigation"
-        aria-label="main-navigation"
-      >
-        <div className="container">
-          <div className="navbar-brand">
-            <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
-            </Link>
-            {/* Hamburger menu */}
-            <div
-              className={`navbar-burger burger ${this.state.navBarActiveClass}`}
-              data-target="navMenu"
-              onClick={() => this.toggleHamburger()}
+const Navbar = () => {
+  return (
+    <Flex
+      position="sticky"
+      zIndex="10"
+      top="0"
+      bg="gray.200"
+      as="nav"
+      alignItems="center"
+      height="16"
+      color="gray.600"
+      boxShadow="sm"
+    >
+      <Container display="flex" alignItems="center">
+        <Flex align="center">
+          <Link to="/" title="Logo">
+            {/* <Image src={logo} alt="react sydney meetup demo app" /> */}
+            <Text
+              fontSize="lg"
+              fontWeight="bold"
+              bg="gray.700"
+              color="gray.100"
+              p="2"
+              px="4"
+              borderRadius="lg"
             >
-              <span />
-              <span />
-              <span />
-            </div>
-          </div>
-          <div
-            id="navMenu"
-            className={`navbar-menu ${this.state.navBarActiveClass}`}
+              React Sydney demo-app
+            </Text>
+          </Link>
+          <Link to="/">
+            <Text ml="6" fontSize="lg" fontWeight="bold" color="gray.700">
+              News feed
+            </Text>
+          </Link>
+        </Flex>
+        <Box ml="auto">
+          <UILink
+            isExternal
+            href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
+            rel="noopener noreferrer"
           >
-            <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/about">
-                About
-              </Link>
-              <Link className="navbar-item" to="/products">
-                Products
-              </Link>
-              <Link className="navbar-item" to="/blog">
-                Blog
-              </Link>
-              <Link className="navbar-item" to="/contact">
-                Contact
-              </Link>
-              <Link className="navbar-item" to="/contact/examples">
-                Form Examples
-              </Link>
-            </div>
-            <div className="navbar-end has-text-centered">
-              <a
-                className="navbar-item"
-                href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="icon">
-                  <img src={github} alt="Github" />
-                </span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </nav>
-    )
-  }
-}
+            <Box color="gray.700" as={FaGithub} size="8" />
+          </UILink>
+        </Box>
+      </Container>
+    </Flex>
+  );
+};
 
-export default Navbar
+export default Navbar;

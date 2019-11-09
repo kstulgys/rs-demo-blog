@@ -3,18 +3,17 @@ import { Helmet } from 'react-helmet';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 // import './all.sass';
-import './reset.css';
+// import './reset.css';
 
 import useSiteMetadata from './SiteMetadata';
 import { withPrefix } from 'gatsby';
-import { ThemeProvider } from 'theme-ui';
-import { tailwind } from '@theme-ui/presets';
-import { Box, Flex, Text } from '@theme-ui/components';
+import { Box, Flex, Text, ThemeProvider, CSSReset } from '@chakra-ui/core';
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
   return (
-    <ThemeProvider theme={tailwind}>
+    <ThemeProvider>
+      <CSSReset />
       <Box>
         <Helmet>
           <html lang="en" />
@@ -55,7 +54,9 @@ const TemplateWrapper = ({ children }) => {
           />
         </Helmet>
         <Navbar />
-        <Box>{children}</Box>
+        <Box bg="gray.100" color="gray.600">
+          {children}
+        </Box>
         <Footer />
       </Box>
     </ThemeProvider>

@@ -1,11 +1,11 @@
 ---
 templateKey: index-page
-title: Great coffee with a conscience Yo
-image: /img/home-jumbotron.jpg
-heading: Great coffee with a conscience
+title: Wellcome to React Sydney demo-app
+image: /img/main-image.jpg
+heading: The greatest workshops 🤓
 subheading: Support sustainable farming while enjoying a cup
 mainpitch:
-  title: Why Kaldi
+  title: React Sydney is phenomenal 🎉
   description: >
     Kaldi is the coffee store for everyone who believes that great coffee
     shouldn't just taste good, it should do good too. We source all of our beans

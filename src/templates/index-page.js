@@ -5,7 +5,8 @@ import { Link, graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Features from '../components/Features';
 import BlogRoll from '../components/BlogRoll';
-import { Box, Flex, Text } from '@theme-ui/components';
+import Container from '../components/Container';
+import { Box, Flex, Text } from '@chakra-ui/core';
 
 export const IndexPageTemplate = ({
   image,
@@ -17,106 +18,57 @@ export const IndexPageTemplate = ({
   intro
 }) => (
   <Box>
-    <Flex
-      sx={{
-        height: '50vh',
-        backgroundImage: `url(${
+    <Flex position="relative" justifyContent="center" alignItems="center">
+      <Flex
+        height="65vh"
+        backgroundImage={`url(${
           !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`,
-        backgroundPosition: `top left`,
-        backgroundAttachment: `fixed`,
-        justifyContent: 'center',
-        alignItems: 'center'
-      }}
-    >
-      <Box sx={{ textAlign: 'center' }}>
-        <Text
-          as="h1"
-          sx={{
-            mx: 3,
-            px: 4,
-            py: 3,
-            mb: 3,
-            fontSize: [4, 5, 5, 6],
-            fontWeight: 'bold',
-            color: 'white',
-            bg: 'red.6',
-            boxShadow: 'lg',
-            lineHeight: 'none'
-          }}
-        >
-          {title}
-        </Text>
-        <Text
-          as="h3"
-          sx={{
-            mx: 3,
-            px: 4,
-            py: 2,
-            fontSize: [2, 2, 3],
-            fontWeight: 'bold',
-            color: 'white',
-            bg: 'red.6',
-            boxShadow: 'lg',
-            lineHeight: 'none'
-          }}
-        >
-          {subheading}
-        </Text>
+        })`}
+        width="full"
+        backgroundPosition="center"
+        backgroundAttachment="fixed"
+        opacity="0.25"
+      />
+
+      <Container position="absolute">
+        <TextHero>{title}</TextHero>
+      </Container>
+    </Flex>
+
+    <Container flexDir="column">
+      <Box my="32">
+        <TextTitle>{mainpitch.title}</TextTitle>
+        <TextBase>{mainpitch.description}</TextBase>
       </Box>
-    </Flex>
-    <Flex
-      as="section"
-      sx={{ bg: 'gray.5', maxWidth: '6xl', mx: 'auto', px: 3 }}
-    >
-      <section className="section section--gradient">
-        <div className="container">
-          <div className="section">
-            <div className="columns">
-              <div className="column is-10 is-offset-1">
-                <div className="content">
-                  <div className="content">
-                    <div className="tile">
-                      <h1 className="title">{mainpitch.title}</h1>
-                    </div>
-                    <div className="tile">
-                      <h3 className="subtitle">{mainpitch.description}</h3>
-                    </div>
-                  </div>
-                  <div className="columns">
-                    <div className="column is-12">
-                      <h3 className="has-text-weight-semibold is-size-2">
-                        {heading}
-                      </h3>
-                      <p>{description}</p>
-                    </div>
-                  </div>
-                  <Features gridItems={intro.blurbs} />
-                  <div className="columns">
-                    <div className="column is-12 has-text-centered">
-                      <Link className="btn" to="/products">
-                        See all products
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
-                      Latest stories
-                    </h3>
-                    <BlogRoll />
-                    <div className="column is-12 has-text-centered">
-                      <Link className="btn" to="/blog">
-                        Read more
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </Flex>
+      <Box height="1" bg="gray.200" />
+      <Box my="20">
+        <TextTitle mb="6">What's new 📄</TextTitle>
+        <BlogRoll />
+        <Flex mt="10">
+          <Box>
+            <Link to="/blog">
+              <TextBase
+                py="2"
+                px="4"
+                bg="gray.700"
+                color="gray.100"
+                borderRadius="lg"
+              >
+                Read more
+              </TextBase>
+            </Link>
+          </Box>
+        </Flex>
+      </Box>
+      <Box height="1" bg="gray.200" />
+      <Box my="20">
+        <TextTitle>{heading}</TextTitle>
+        <TextBase>{description}</TextBase>
+        <Box mt="10">
+          <Features gridItems={intro.blurbs} />
+        </Box>
+      </Box>
+    </Container>
   </Box>
 );
 
@@ -197,3 +149,37 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+const TextHero = props => (
+  <Text
+    as="h1"
+    mx="auto"
+    p="6"
+    color="gray.700"
+    textAlign="right"
+    fontSize={['4xl', '4xl', '5xl', '6xl']}
+    fontWeight="bold"
+    // bg="blue.600"
+    // boxShadow="lg"
+    lineHeight="none"
+    {...props}
+  />
+);
+
+const TextTitle = props => (
+  <Text
+    as="h3"
+    mb="3"
+    color="gray.700"
+    textAlign="center"
+    fontSize={['xl', '2xl', '3xl']}
+    fontWeight="semibold"
+    {...props}
+  />
+);
+
+const TextSubtitle = props => (
+  <Text fontSize={['xl']} fontWeight="semibold" {...props} />
+);
+
+const TextBase = props => <Text fontSize={['xl']} {...props} />;
