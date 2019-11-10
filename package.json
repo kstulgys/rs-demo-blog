@@ -40,6 +40,7 @@
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
     "react-icons": "^3.8.0",
+    "react-markdown": "^4.2.2",
     "theme-ui": "^0.2.46",
     "uuid": "^3.2.1"
   },

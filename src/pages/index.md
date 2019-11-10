@@ -1,21 +1,27 @@
 ---
 templateKey: index-page
-title: Wellcome to React Sydney demo-app
+title: Wellcome to Gatsby 💖 Netlify CMS starter
 image: /img/main-image.jpg
+
+mainpitch:
+  title: Gatsby 💖 Netlify CMS starter 🎉
+  description: |
+    This project was build in preparation for the talk [**@React Sydney**](https://www.google.com "React Sydney meetup page") meetup. The talk was about Gatsby and Netlify CMS.  
+
+    - How to setup Gatsby with Netlify CMS.
+
+    - How to configure the "backend"/Netlify CMS.
+
+    - How to use the git-gateway/Netlify CMS for content management.
+    
 heading: The greatest workshops 🤓
 subheading: Support sustainable farming while enjoying a cup
-mainpitch:
-  title: React Sydney is phenomenal 🎉
-  description: >
-    Kaldi is the coffee store for everyone who believes that great coffee
-    shouldn't just taste good, it should do good too. We source all of our beans
-    directly from small scale sustainable farmers and make sure part of the
-    profits are reinvested in their communities.
 description: >-
   Kaldi is the ultimate spot for coffee lovers who want to learn about their
   java’s origin and support the farmers that grew it. We take coffee production,
   roasting and brewing seriously and we’re glad to pass that knowledge to
   anyone.
+  
 intro:
   blurbs:
     - image: /img/coffee.png

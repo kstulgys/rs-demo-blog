@@ -31,13 +31,19 @@ const Navbar = () => {
               p="2"
               px="4"
               borderRadius="lg"
+              textTransform="uppercase"
             >
-              React Sydney demo-app
+              Gatsby 💖 Netlify CMS
             </Text>
           </Link>
           <Link to="/">
             <Text ml="6" fontSize="lg" fontWeight="bold" color="gray.700">
               News feed
+            </Text>
+          </Link>
+          <Link to="/">
+            <Text ml="6" fontSize="lg" fontWeight="bold" color="gray.700">
+              Workshops
             </Text>
           </Link>
         </Flex>

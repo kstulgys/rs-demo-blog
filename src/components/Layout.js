@@ -3,11 +3,11 @@ import { Helmet } from 'react-helmet';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 // import './all.sass';
-// import './reset.css';
 
 import useSiteMetadata from './SiteMetadata';
 import { withPrefix } from 'gatsby';
 import { Box, Flex, Text, ThemeProvider, CSSReset } from '@chakra-ui/core';
+import './reset.css';
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();

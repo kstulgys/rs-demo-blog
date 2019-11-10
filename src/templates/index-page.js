@@ -6,6 +6,7 @@ import Layout from '../components/Layout';
 import Features from '../components/Features';
 import BlogRoll from '../components/BlogRoll';
 import Container from '../components/Container';
+import Markdown from 'react-markdown'
 import { Box, Flex, Text } from '@chakra-ui/core';
 
 export const IndexPageTemplate = ({
@@ -38,7 +39,9 @@ export const IndexPageTemplate = ({
     <Container flexDir="column">
       <Box my="32">
         <TextTitle>{mainpitch.title}</TextTitle>
-        <TextBase>{mainpitch.description}</TextBase>
+        <TextBase>
+         <Markdown source={mainpitch.description}/>
+       </TextBase>
       </Box>
       <Box height="1" bg="gray.200" />
       <Box my="20">
