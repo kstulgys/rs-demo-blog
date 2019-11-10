@@ -1,27 +1,29 @@
 ---
 templateKey: index-page
-title: Wellcome to Gatsby 💖 Netlify CMS starter
+title: "Wellcome to Gatsby \U0001F496 Netlify CMS starter, this is worky!! but not rendering... \U0001F914"
 image: /img/main-image.jpg
-
+heading: "The greatest workshops \U0001F913"
+subheading: Support sustainable farming while enjoying a cup
 mainpitch:
-  title: Gatsby 💖 Netlify CMS starter 🎉
-  description: |
-    This project was build in preparation for the talk [**@React Sydney**](https://www.google.com "React Sydney meetup page") meetup. The talk was about Gatsby and Netlify CMS.  
+  title: "Gatsby \U0001F496 Netlify CMS starter \U0001F389"
+  description: >
+    This project was build in preparation for the talk [**@React
+    Sydney**](https://www.google.com "React Sydney meetup page") meetup. The
+    talk was about Gatsby and Netlify CMS.  
+
 
     - How to setup Gatsby with Netlify CMS.
 
+
     - How to configure the "backend"/Netlify CMS.
 
+
     - How to use the git-gateway/Netlify CMS for content management.
-    
-heading: The greatest workshops 🤓
-subheading: Support sustainable farming while enjoying a cup
 description: >-
   Kaldi is the ultimate spot for coffee lovers who want to learn about their
   java’s origin and support the farmers that grew it. We take coffee production,
   roasting and brewing seriously and we’re glad to pass that knowledge to
   anyone.
-  
 intro:
   blurbs:
     - image: /img/coffee.png
@@ -74,3 +76,4 @@ main:
     alt: Coffee beans
     image: /img/products-grid1.jpg
 ---
+
